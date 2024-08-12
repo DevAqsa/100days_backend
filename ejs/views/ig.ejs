@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intagram pAge</title>
+</head>
+<body>
+    <h2>
+        This page belongs to : @<%= username %>
+    </h2>
+    <button>Follow</button>
+    <button>Message</button>
+
+    <h2>Accounts that you follow</h2>
+<ul>
+    <% for (let name of followers){ %>
+        <li> <%=name %></li>
+    <%}%>
+</ul>
+
+</body>
+</html>
+
