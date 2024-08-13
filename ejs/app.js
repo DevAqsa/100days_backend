@@ -9,14 +9,25 @@ app.set("views", path.join(__dirname, "/views"))
 
 app.set("view engine", "ejs")
 
-app.get("/", (req, res) =>{
-    res.render("home.ejs")
-})
+// app.get("/", (req, res) =>{
+//     res.render("home.ejs")
+// })
 
 app.get("/ig/:username", (req, res) =>{
-    let followers = ["iqra", "areeba", "sana" ,"hira"]
     let {username} = req.params;
-    res.render("ig.ejs", {username, followers})
+
+    let instaData = require("./data.json");
+
+    const data = instaData[username];
+    
+    // let followers = ["iqra", "areeba", "sana" ,"hira"]
+    
+    if(data){
+        res.render("ig.ejs", {data})
+    } else {
+             res.render("error.ejs")       
+    }
+   
 })
 
 //  assuming we passing the data in ejs from database
