@@ -5,6 +5,11 @@ const app = express()
 
 const port = 8080
 
+// we can also serve two or more folders in app.js (serving css & js)
+app.use(express.static(path.join(__dirname, "/public/js")));
+app.use(express.static(path.join(__dirname, "/public/css")));
+
+
 app.set("views", path.join(__dirname, "/views"))
 
 app.set("view engine", "ejs")
