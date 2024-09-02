@@ -17,6 +17,8 @@ app.get("/register" , (req, res) =>{
     res.send(`standard get response welcome ${user}`)
 })
 
+//how we handling the post request
+
 app.post("/register" , (req, res) =>{
     let {user, password} = req.body
     console.log(req.body)
