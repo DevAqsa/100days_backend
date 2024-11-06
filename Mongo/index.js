@@ -17,3 +17,6 @@ const userSchema = new mongoose.Schema({
     email: String,
     age: Number
 })
+
+const employee = mongoose.model("Employee", userSchema)
+const User = mongoose.model("user", userSchema)
